@@ -7,11 +7,7 @@
     <!--using Skeleton for CSS library to practice not using Bootstrap for everything-->
     <!-- Basic Page Needs
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-    <meta charset="utf-8">
-    <title>Your page title here :)</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
-      
+         
     <!-- Mobile Specific Metas
     –––––––––––––––––––––––––––––––––––––––––––––––––– -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,10 +21,43 @@
     <link rel="stylesheet" href="assets/normalizeSkeleton.css">
     <link rel="stylesheet" href="assets/styleSkeleton.css">
       
-        
-      
 </head>
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="four columns">
+                <h3 class="text-primary">Weather Dashboard</h3>
+                <label for="exampleEmailInput">Search for Cities</label>
+                <input class="u-full-width" type="search" placeholder="Search" id="SearchBar">
+                <div class="row">
+                    <ul class="recent-searches">
+
+                    </ul>
+                </div>
+            </div>
+            <div class="eight columns">
+                <div class="row">
+                    <h3>Showing Results for <span id="search-city"></span></h3>
+                    <div id="result-forecast">
+                        <ul>
+                            <li>Temperature: </li>
+                            <li>Humidity: </li>
+                            <li>Wind Speed: </li>
+                            <li>UV Index: </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <h3>Five Day Forecast</h3>
+                    <div class="two columns" id="dayone">One</div>
+                    <div class="two columns" id="daytwo">Two</div>
+                    <div class="two columns" id="daythree">Three</div>
+                    <div class="two columns" id="dayfour">Four</div>
+                    <div class="two columns" id="dayfive">Five</div>
+                </div>
+            </div>
+        </div>
+    </div>
     
 </body>
 </html>
