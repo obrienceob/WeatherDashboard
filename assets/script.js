@@ -56,7 +56,7 @@ searchButton.click(function () {
             method: 'GET'
             }).then(function (response) {
                 var currentUV = cityTemperature.append("<p>" + "UV Index: " + response.current.uvi + "</p>").addClass("card-text");
-                //currentUV.addClass("UV");
+                currentUV.addClass("UV");
                 cityTemperature.append(currentUV)
             });
         });
