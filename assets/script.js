@@ -1,7 +1,7 @@
 var searchButton = $(".searchButton");
 
-var apiKey = "690620c5a29a2986b4f98ec2b781c4db";
-
+var apiKey = "44821f29d408bf65d936bfb44c1d747f";
+//adds recent searches to the div
 for (var i = 0; i < localStorage.length; i++) {
     var city = localStorage.getItem(i);
     var cityName = $(".reccent-seraches").addClass("recent-searches-item");
@@ -11,12 +11,13 @@ for (var i = 0; i < localStorage.length; i++) {
 
 var clickCount = 0
 
-searchButton.click(function () {
+//function for API calls
+searchButton.click(function firstClick() {
     var searchInput = $(".searchInput").val();
 
     var urlCurrent = "https://api.openweathermap.org/data/2.5/weather?q=" + searchInput + "&appid=" + apiKey + "&units=imperial";
     var urlFiveDay = "https://api.openweathermap.org/data/2.5/forecast?q=" + searchInput + "&appid=" + apiKey + "&units=imperial";
-
+//using ajax to call the API
     if (searchInput == "") {
         console.log(searchInput)
     }
@@ -55,9 +56,19 @@ searchButton.click(function () {
             url: urlUV,
             method: 'GET'
             }).then(function (response) {
-                var currentUV = cityTemperature.append("<p>" + "UV Index: " + response.current.uvi + "</p>").addClass("card-text");
+                var currentUV = cityTemperature.append("<p class=uvi>" + "UV Index: " + response.current.uvi + "</p>").addClass("card-text");
                 currentUV.addClass("UV");
-                cityTemperature.append(currentUV)
+                cityTemperature.append(currentUV);
+
+                if (response.current.uvi < 3) {
+                    $(".uvi").addClass("UVgood")
+                } 
+                else if (response.current.uvi > 3 && response.current.uvi < 8) {
+                    $(".uvi").addClass("UVmoderate")
+                }
+                else if (response.current.uvi > 8) {
+                    $(".uvi").addClass("UVsevere");  
+                };
             });
         });
 
@@ -78,6 +89,10 @@ searchButton.click(function () {
             
             })
         });
-    }
-})
+    } 
     
+  
+});
+ 
+
+

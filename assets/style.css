@@ -3,6 +3,17 @@ img {
     height: 100px;
 }
 
-.card-body {
+.UVgood {
+   color: green;
+   font-weight: bolder; 
+}
 
+.UVmoderate {
+    color: yellow;
+    font-weight: bolder;
+}
+
+.UVsevere {
+    color: red;
+    font-weight: bolder;
 }
