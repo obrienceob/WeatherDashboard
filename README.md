@@ -16,8 +16,7 @@ Search for a city of your choice. THe current weather will display, with the dat
 
 Here is a screenshot of the weather dashboard app
 
-<img src="./WeatherDashboard/WeatherDashboard/assets/WeatherDashboard.png" alt="screenshot of weather dashboard">
-
+<img src="/WeatherDashboard/assets/WeatherDashboard.png" alt="screenshot of weather dashboard">
 
 [Code]
 
